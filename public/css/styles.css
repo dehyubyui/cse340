@@ -4,3 +4,311 @@
 *:after {
   box-sizing: border-box;
 }
+
+body {
+  background-image: url("/images/site/checkerboard.jpg");
+}
+
+#wrapper {
+  width: 70vw;
+  margin: 0 auto;
+  border: 3px solid aqua ;
+  border-radius: 20px;
+  padding: 1rem;
+  background-color: white;
+}
+
+/******* Header Style Starts Here ***************/
+
+#top-header {
+  display: flex;
+  /* grid-template-columns: .5fr .5fr; */
+  justify-content: space-between;
+  
+}
+
+.siteName a{
+  color: black;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+#tools {
+  justify-content: space-around;
+}
+
+#tools a{
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  color: black;
+  justify-self: end;
+  text-decoration: none;
+}
+
+/******* Navigation Style Starts Here ***************/
+nav {
+  background-color: rgb(53, 17, 110);
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+nav ul li {
+  padding: .7rem;
+  color: white;
+  list-style: none;
+}
+
+nav ul li:hover{
+  background-color: rgb(66, 23, 134);
+}
+
+nav ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+/******* Main Style Starts Here ***************/
+main {
+  padding: 1rem;
+  border: 3px solid #5555;
+  border-radius: 1rem;
+  box-shadow: 0 0px 10px 2px #200a44;
+}
+
+#hero-wrapper {
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ margin-bottom: 20vh;
+}
+
+#hero-wrapper img {
+  width: 90%;
+}
+
+.hero-call-to-action {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  color: rgb(53, 17, 110);
+  left: 17vw;
+  position: absolute;
+  background-color: #ffffff6e;
+  padding: 2rem;
+  justify-content: flex-start;
+  z-index: 9999999;
+}
+
+.hero-call-to-action h2{
+  margin: .2rem .5rem;
+}
+
+.hero-call-to-action h3{
+  margin: .1rem .5rem;
+}
+
+#ctaBtn{
+  align-self: center;
+  cursor: pointer;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: rgb(53, 17, 110);
+  color: #eee;
+  width: 90%;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+#ctaBtn:hover{
+  background-color: #0caccc;
+}
+
+#car-info {
+  display: grid;
+  grid-template-columns: .5fr .5fr ;
+  grid-template-rows: .5fr .5fr;
+  gap: 2rem;
+}
+
+#car-info h2{
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.car-reviews {
+  font-size: 1.75rem;
+  grid-column: 2/2;
+}
+
+.car-reviews ul li {
+  margin: .75rem;
+}
+
+.car-upgrades{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  height: 100%;
+}
+
+.car-upgrades ul{
+  display: grid;
+  grid-template-columns: .5fr .5fr;
+  grid-template-rows: .5fr .5fr;
+  gap: 10px;
+  padding: 0;
+}
+
+.car-upgrades ul li{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.img-holder {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(53, 17, 110);
+  border: 2px solid rgba(0,0,0,.5);
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.car-upgrades ul li a {
+  margin: 0;
+  padding: .5rem;
+  text-align: center;
+}
+
+.car-info {
+  display: grid;
+  grid-template-columns: [img-start] .5fr [img-end] .5fr;
+  max-width: 100%;
+  gap: 20px;
+  justify-items: center;
+}
+
+/******* MOBILE VIEW*******/
+
+/*************************************
+ *************MEDIUM VIEW*************
+ *************************************/
+@media screen and (min-width:590px)and (max-width:1079px) {
+
+  #hero-wrapper {
+    margin-bottom: 10vh;
+  }
+
+  .hero-call-to-action {
+    font-size: 1rem;
+    width: 30vw;
+    flex-grow: 1;
+    padding: 0;
+    margin: .5rem;
+  }
+
+  .hero-call-to-action h2{
+    font-size: 1.5rem;
+  }
+
+  #ctaBtn {
+    font-size: 1rem;
+    width: 70%;
+  }
+
+  #hero-wrapper img {
+    width: 50vw;
+  }
+
+  #car-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #car-info h2{
+    font-size: 1.5rem;
+  }
+
+  .car-reviews {
+    font-size: 1rem;
+  }
+
+  .car-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+/*************************************
+ ***********SMALLEST VIEW*************
+ *************************************/
+@media screen and (max-width:589px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  nav ul{
+    padding: 0;
+  }
+
+  nav ul li a{
+    flex-shrink: 1;
+    font-size: .5rem;
+  }
+
+  #hero-wrapper {
+    margin-bottom: 5vh;
+  }
+
+  .hero-call-to-action{
+    width: 30vw;
+    flex-grow: 1;
+    padding: 0;
+    margin: .5rem;
+  }
+
+  .hero-call-to-action h2 {
+    font-size: 1rem;
+  }
+
+  .hero-call-to-action h3 {
+    font-size: .7rem;
+  }
+
+  #car-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #car-info img {
+    display: block;
+  }
+
+  #car-info h2{
+    font-size: 1rem;
+  }
+
+  .car-reviews {
+    font-size: .8rem;
+  }
+
+  .car-upgrades {
+    font-size: .8rem;
+  }
+  .car-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .car-info h2{
+    margin-bottom: 1rem;
+  }
+}
+}
