@@ -1,0 +1,23 @@
+<%# Content Heading%>
+<% if (title) { %>
+    <h1><%- title %></h1>
+<% } else {
+    res.redirect('/')
+} %>
+
+<%- messages() %>
+
+<% if (errors) { %>
+    <ul class="notice">
+    <% errors.array().forEach(error =>{ %>
+        <li><%= error.msg %></li>
+    <% }) %>
+    </ul>
+<% } %>
+
+<div id="thankYou-wrapper">
+    <h2>You have successfully purchased a new vehicle!</h2>
+    <img src="/images/site/thumbs-up.png">
+    <p>You can check your order history by clicking the link below:</p>
+    <a href="/account/">ORDER HISTORY</a>
+</div>

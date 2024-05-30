@@ -32,5 +32,8 @@ router.post('/update/',invValidation.addInventoryRules(), invValidation.checkUpd
 router.post('/delete/', utilities.handleErrors(invController.deleteInventory))
 //Route to post purchase confirm
 router.post('/detail/checkout/:inventory_id', utilities.checkLogin, utilities.handleErrors(invController.buildConfirmPurchaseView))
+//Route to post process purchase
+router.post('/thank-you', purchValidation.confirmPurchaseRules(), purchValidation.checkConfirmPurchPost, invController.purchaseVehicle )
+
 
 module.exports = router;

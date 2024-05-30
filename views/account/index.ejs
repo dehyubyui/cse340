@@ -1,0 +1,28 @@
+<% if (title) { %>
+    <h1><%- title %></h1>
+<% } else {
+    res.redirect('/')
+} %>
+
+<%- messages() %>
+
+<% if (errors) { %>
+    <ul class="notice">
+    <% errors.array().forEach(error =>{ %>
+        <li><%= error.msg %></li>
+    <% }) %>
+    </ul>
+<% } %>
+
+<div id="account-management-wrapper">
+<% if (locals.accountType == "Admin" || locals.accountType == "Employee") { %>
+    <h2>Welcome <%=locals.accountFirstName%></h2>
+    <h3>Inventory Management</h3>
+    <p id="updateAccount"><a href="/account/update">Update Account Information</a></p>
+    <p id="invManagement"><a href="/inv/">Inventory Management</a></p>
+<% } else { %>
+    <h2>Welcome <%=locals.accountFirstName%></h2>
+    <p id="updateAccount"><a href="/account/update">Update Account Information</a></p>
+    <p id="orderHistory"><a href="/account/orders">Purchase History</a></p>
+<% } %>
+</div>
